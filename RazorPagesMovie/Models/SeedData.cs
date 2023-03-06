@@ -17,10 +17,10 @@ namespace RazorPagesMovie.Models
                 }
 
                 // Look for any movies.
-                //if (context.Movie.Any())
-                //{
-                //    return;   // DB has been seeded
-                //}
+                if (context.Movie.Any())
+                {
+                    return;   // DB has been seeded
+                }
 
                 context.Movie.AddRange(
                     new Movie
