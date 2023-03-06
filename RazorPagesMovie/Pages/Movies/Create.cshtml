@@ -1,0 +1,111 @@
+﻿@page
+@model RazorPagesMovie.Pages.Movies.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    ViewBag.Title = "form";
+}
+
+<h1>Create</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Movie.Title" class="control-label"></label>
+                <input asp-for="Movie.Title" class="form-control" />
+                <span asp-validation-for="Movie.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.ReleaseDate" class="control-label"></label>
+                <input asp-for="Movie.ReleaseDate" class="form-control" />
+                <span asp-validation-for="Movie.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Genre" class="control-label"></label>
+                <input asp-for="Movie.Genre" class="form-control" />
+                <span asp-validation-for="Movie.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Actors" class="control-label"></label>
+                <input asp-for="Movie.Actors" class="form-control" id="input"/>
+                <button type="button" onclick="Mudarestado('minhaDiv2')">+</button>
+                <span asp-validation-for="Movie.Actors" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" id="minhaDiv2" style="display:none">
+                <label asp-for="Movie.Actors2" class="control-label"></label>
+                <input asp-for="Movie.Actors2" class="form-control" id="input"/>
+                <button type="button" onclick="Mudarestado('minhaDiv3')">+</button>
+                <span asp-validation-for="Movie.Actors2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" id="minhaDiv3" style="display:none">
+                <label asp-for="Movie.Actors3" class="control-label"></label>
+                <input asp-for="Movie.Actors3" class="form-control" id="input"/>
+                <button type="button" onclick="Mudarestado('minhaDiv4')">+</button>
+                <span asp-validation-for="Movie.Actors3" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group" id="minhaDiv4" style="display:none">
+                <label asp-for="Movie.Actors4" class="control-label"></label>
+                <input asp-for="Movie.Actors4" class="form-control" id="input"/>
+                <button type="button" onclick="Mudarestado('minhaDiv5')">+</button>
+                <span asp-validation-for="Movie.Actors4" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" id="minhaDiv5" style="display:none">
+                <label asp-for="Movie.Actors5" class="control-label"></label>
+                <input asp-for="Movie.Actors5" class="form-control" id="input"/>
+                <button type="button" onclick="Mudarestado('minhaDiv6')">+</button>
+                <span asp-validation-for="Movie.Actors5" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" id="minhaDiv6" style="display:none">
+                <label asp-for="Movie.Actors6" class="control-label"></label>
+                <input asp-for="Movie.Actors6" class="form-control" id="input"/>
+                <span asp-validation-for="Movie.Actors6" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Movie.Price" class="control-label"></label>
+                <input asp-for="Movie.Price" class="form-control" />
+                <span asp-validation-for="Movie.Price" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Movie.Rating" class="control-label"></label>
+                <input asp-for="Movie.Rating" class="form-control" />
+                <span asp-validation-for="Movie.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	
+     <script>
+  
+    function Mudarestado(el) {
+        var display = document.getElementById(el).style.display;
+             if (display == "none")
+                document.getElementById(el).style.display = 'block';
+             else
+                document.getElementById(el).style.display = 'none';
+        }
+ </script>
+
+}
+
+
+
